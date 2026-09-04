@@ -61,3 +61,10 @@ console.log('Remainder is', rem)
 //Exponentiation
 pow = a**b
 console.log("a power b is", pow)
+
+
+//Homework
+
+// 3 subjects marks
+// calculate - total marks, average marks, check the data type of toatal and average
+// also calculate percentage 
