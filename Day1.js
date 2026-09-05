@@ -68,3 +68,20 @@ console.log("a power b is", pow)
 // 3 subjects marks
 // calculate - total marks, average marks, check the data type of toatal and average
 // also calculate percentage 
+
+let english = 87;
+let math = 56;
+let punjabi = 89;
+
+let total = english + math + punjabi;
+
+let avg = total / 3;
+
+let per = total / 300 * 100;
+
+console.log("Total is", total)
+console.log("Avg is", avg)
+console.log("Percentage is", per)
+
+console.log(typeof(total))
+console.log(typeof(avg))
