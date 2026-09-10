@@ -72,6 +72,5 @@ if(!logIn) {
 //Practice Ques - 9 - Create:let isVerified = false; Print "Please verify your account" if the account is not verified.
 
 //Truthy and Falsy
-
 //FAlse value - false, 0, -0, "", null,undefined, NaN
 //Truthy values - everything else is true
