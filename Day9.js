@@ -95,7 +95,7 @@
 // console.log(count)
 
 //Revrese
-num = 12345
+// num = 12345
 // let reverse = 0
 
 // while(num>0) {
@@ -114,3 +114,13 @@ num = 12345
 //     ans = 
 // }
 
+let num = 123
+let reverse = 0
+
+while(num>0) {
+    let digit = Math.floor(num%10)
+    reverse = reverse*10 + digit
+    num = Math.floor(num/10)
+}
+
+console.log(reverse)
