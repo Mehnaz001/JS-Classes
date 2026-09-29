@@ -125,3 +125,9 @@ console.log(electronics)
 //Q-8 Total price of all products
 //Q-9 Find most expensive product
 //Q-10 total price of only products that are in stock
+
+let total = products.filter(product=>product.inStock).reduce((sum,product)=> {
+    return sum+product.price
+},0)
+
+console.log(total)
