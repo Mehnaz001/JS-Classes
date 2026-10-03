@@ -34,5 +34,15 @@ image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSusPMeuicIbCP
 //Practice question
 
 //Q1 - Anchor tag - link (facebook) -> github link through js
+const link = document.getElementById('facebook-link')
+console.log(link)
+link.href = 'https://github.com/Mehnaz001'
+link.textContent = "Github"
 //Q2 - cat image - dog image through js
 //Q3 - div profile - add name , about,contact button 
+const profile = document.getElementById('profile')
+profile.innerHTML = `
+    <h2>Alice</h2>
+    <p>THis is something about me</p>
+    <button>Contact me </button>
+`
