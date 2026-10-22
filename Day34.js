@@ -84,14 +84,18 @@
 // //API - Application programming interface
 
 async function api() {
-    let response = await fetch("https://jsonplaceholder.typicode.com/users")
+   try {
+     let response = await fetch("https://jsonplaceholder.typicode.com/users")
     let data = await response.json()
     console.log(data)
+   }catch(err) {
+    console.log(err)
+   }
 }
 api()
 
-//JSON - Javascript object notation
-let student = {
-    name:"Ali",
-    age:34
-}
+// //JSON - Javascript object notation
+// let student = {
+//     name:"Ali",
+//     age:34
+// }
