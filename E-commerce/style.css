@@ -4,10 +4,18 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary:#1A05A2;
+    --dark:#161E54;
+    --muted:#36415A;
+    --background:#f8f8fc;
+    --white:#ffffff;
+}
+
 body {
     font-family: "Poppins",sans-serif;
-    background:#f8f8fc;
-    color: black;
+    background:var(--background);
+    color:var(--dark);
 }
 
 .navbar {
@@ -21,4 +29,77 @@ body {
     top:0;
     z-index:10;
     box-shadow:0 2px 12px rgb(198, 197, 197)
+}
+
+.logo {
+    font-size:26px;
+    font-weight: 800;
+    text-decoration: none;
+    color:var(--dark);
+}
+
+.logo span {
+    color:var(--primary);
+}
+
+.search-box {
+    display:flex;
+    max-width:460px;
+    width:100%;
+    background: #f3f3f3;
+    border-radius: 10px;
+}
+
+.search-box input {
+    width:100%;
+    border:none;
+    outline:none;
+    padding:10px;
+    background: transparent;
+}
+
+.search-box button, .cart-btn,.shop-btn {
+    background-color: var(--primary);
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight: bold;
+}
+
+.cart-btn {
+    white-space: nowrap;
+}
+
+.hero {
+    margin:30px 7%;
+    padding:65px 7%;
+    background: #8e7dff;
+    background: radial-gradient(circle, rgba(142, 125, 255, 1) 0%, rgba(31, 31, 222, 1) 100%);
+    display:flex;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 15px;
+    color:white
+}
+
+.hero p:not(.eyebrow) {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.shop-btn {
+    display: inline-block;
+    text-decoration: none;
 }
