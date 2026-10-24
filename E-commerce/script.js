@@ -1,6 +1,6 @@
 const API_URL = 'https://dummyjson.com/products'
-
 const productContainer = document.getElementById('product-container')
+const sortSelect = document.getElementById('sortSelect')
 
 let allProducts = [];
 
@@ -30,11 +30,36 @@ function displayProducts(products) {
                 <img src="${product.thumbnail}" >
             </div>
             <div class="product-info">
-                <p>${product.category}</p>
+                <p class="category">${product.category}</p>
                 <h3>${product.title}</h3>
-                <p> ${product.rating}</p>
-                <button> Add to cart</button>
+                <p class="rating"> ⭐${product.rating}</p>
+                <p class="price"> $${product.price} </p>
+                <button class="add-btn" data-id="${product.id}"> Add to cart</button>
             </div>
         </article>
-    `)
+    `).join("")
 }
+
+function applySorting() {
+    const sortValue = sortSelect.value;
+    let filteredProducts = [...allProducts];
+    if(sortValue === "low") {
+        filteredProducts.sort((a,b)=> a.price-b.price)
+    } else if (sortValue === "high") {
+        filteredProducts.sort((a,b)=> b.price-a.price)
+    } else if(sortValue === "rating") {
+        filteredProducts.sort((a,b)=> b.rating- a.rating)
+    }
+
+    displayProducts(filteredProducts)
+}
+
+sortSelect.addEventListener('change',applySorting)
+
+productContainer.addEventListener('click', function(event){
+    if(event.target.classList.contains('add-btn')) {
+        console.log(event.target)
+        const button = event.target
+        console.log(button.dataset.id) 
+    }
+})

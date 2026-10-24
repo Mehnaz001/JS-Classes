@@ -39,11 +39,17 @@
             <div class="section-heading">
                 <p class="eyebrow">OUR COLLECTION</p>
                 <h2>Feature Products</h2>
-                <p>Loading products...</p>
             </div>
+
+            <select name="" id="sortSelect">
+                <option value="default">Sort by: Default</option>
+                <option value="low">Price:Low to high</option>
+                <option value="high">Price:High to Low</option>
+                <option value="rating">Top rated</option>
+            </select>
         </div>
 
-        <div id="product-container"></div>
+        <div id="product-container" class="products-grid"><p>Loading products...</p></div>
     </main>
 
     <script src="script.js"></script>
