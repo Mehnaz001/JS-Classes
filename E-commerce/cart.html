@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cart-overlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button id="closeCart" class="close-btn">X</button>
+            </div>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-footer">
+                <h3>Total: <span id="cartTotal">0.00</span></h3>
+                <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+                <p id="checkoutMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
