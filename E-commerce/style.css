@@ -212,8 +212,12 @@ body {
     inset:0;
     background: #0007;
     z-index:20;
-    /* display: none; */
+    display: none;
     justify-content: flex-end;
+}
+
+.cart-overlay.open {
+    display: flex;
 }
 
 .cart-panel {
@@ -238,4 +242,23 @@ body {
     background:red;
     padding:10px;
     border-radius: 8px;
+}
+
+.cart-item {
+    display:flex;
+    gap:12px;
+    padding:15px;
+    border-radius:8px;
+}
+
+.cart-item img {
+    width:75px;
+    height:75px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    flex:1;
+    min-width:0;
 }

@@ -3,6 +3,10 @@ const productContainer = document.getElementById('product-container')
 const sortSelect = document.getElementById('sortSelect')
 const cartCount = document.getElementById('cartCount')
 const cartItems = document.getElementById('cartItems')
+const cartBtn = document.getElementById('cartBtn')
+const cartOverlay = document.querySelector('.cart-overlay')
+const closeCart = document.getElementById('closeCart')
+const cartTotal = document.getElementById('cartTotal')
 
 let allProducts = [];
 let cart = []
@@ -78,11 +82,12 @@ function addToCart(productId) {
     if(!product) 
         return;
 
+    console.log(product)
     cart.push({
         id:product.id,
         title:product.title,
         price:product.price,
-        thumbnail:product.thumbnail,
+        thumbnail:product.images[0],
         quantity:1
     })
 
@@ -96,10 +101,44 @@ function saveCart() {
 
 function updateCart() {
     cartCount.textContent = cart.length
-    // cartItems.innerHTML = cart.map(item => `
-    //     <div class='cart-item'>
-    // `)
+    const totalPrice = cart.reduce((total,item) => total+item.price* item.quantity,0)
+    cartTotal.textContent = `$ ${totalPrice}`
+
+    console.log(cart)
+    cartItems.innerHTML = cart.map(item => `
+        <div class='cart-item'>
+            <img src='${item.thumbnail}' alt='${item.title}'>
+            <div class='cart-item-details'> 
+                <h4> ${item.title} </h4>
+                <p> $${item.price} </p>
+                <div class='quantity-controls'>
+
+                    <button data-id='${item.id} 'class='decrease'> - </button>
+
+                    <span> ${item.quantity} </span>
+
+                    <button data-id='${item.id}' class='increase'> + </button>
+
+                    <button data-id='${item.id}'class='remove'> Remove </button>
+                </div>
+            </div>
+        </div>
+
+    `).join("")
 }
 
 //image
 //item-details - title , price, button - + , button -, button - remove
+
+//open cart
+cartBtn.addEventListener('click', function () {
+    cartOverlay.classList.add('open')
+})
+
+//close cart
+closeCart.addEventListener('click', function(){
+    cartOverlay.classList.remove('open')
+})
+
+//cartItems pe event listner -> even.triggered nikalo, product id , aur kya action perform krna hai increase, or decrease or remove
+// separate function for quantity change - which check the action and update the quantity
