@@ -7,6 +7,8 @@ const cartBtn = document.getElementById('cartBtn')
 const cartOverlay = document.querySelector('.cart-overlay')
 const closeCart = document.getElementById('closeCart')
 const cartTotal = document.getElementById('cartTotal')
+const searchInput = document.getElementById('searchInput')
+const searchBtn = document.getElementById('searchBtn')
 
 let allProducts = [];
 let cart = []
@@ -142,3 +144,17 @@ closeCart.addEventListener('click', function(){
 
 //cartItems pe event listner -> even.triggered nikalo, product id , aur kya action perform krna hai increase, or decrease or remove
 // separate function for quantity change - which check the action and update the quantity
+
+function searchProducts() {
+    const query = searchInput.value.trim().toLowerCase();
+
+    const filteredProducts = allProducts.filter(product => product.title.toLowerCase().includes(query))
+
+    const categoryProducts = allProducts.filter(product => product.category.toLowerCase().includes(query))
+
+    const allSearchedProducts = [...filteredProducts,...categoryProducts]
+
+    displayProducts(allSearchedProducts)
+}
+
+searchBtn.addEventListener('click', searchProducts )
