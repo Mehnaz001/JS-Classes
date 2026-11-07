@@ -48,6 +48,7 @@ function displayProducts(products) {
                 <p class="rating"> ⭐${product.rating}</p>
                 <p class="price"> $${product.price} </p>
                 <button class="add-btn" data-id="${product.id}"> Add to cart</button>
+                <button class='details-btn' data-id='${product.id}'>View details </button>
             </div>
         </article>
     `).join("")
@@ -75,6 +76,12 @@ productContainer.addEventListener('click', function (event) {
         const button = event.target
         console.log(button.dataset.id)
         addToCart(Number(button.dataset.id))
+    }
+
+    if(event.target.classList.contains('details-btn')) {
+        const detailBtn = event.target
+        const productId = detailBtn.dataset.id
+        window.location.href = `product.html?id=${productId}`
     }
 })
 

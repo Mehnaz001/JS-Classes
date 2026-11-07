@@ -262,3 +262,20 @@ body {
     flex:1;
     min-width:0;
 }
+
+/* Product Details page */
+
+.details-container {
+    max-width :1150px;
+    margin:35px auto;
+    padding:20px;
+}
+
+.back-link {
+    display:inline-block;
+    text-decoration:none;
+    color:var(--primary);
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
